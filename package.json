@@ -1,0 +1,96 @@
+{
+  "name": "iauai",
+  "version": "0.5.0",
+  "homepage": "https://explorer.rapidurbanism.com/delta/",
+  "private": true,
+  "dependencies": {
+    "@ant-design/charts": "0.9.9",
+    "@ant-design/icons": "^4.6.2",
+    "@antv/data-set": "0.11.4",
+    "@aws-amplify/ui-react": "1.0.6",
+    "@craco/craco": "5.6.4",
+    "@doodle3d/clipper-js": "1.0.11",
+    "@formulajs/formulajs": "2.4.3",
+    "@loadable/component": "5.13.1",
+    "@testing-library/jest-dom": "4.2.4",
+    "@testing-library/react": "9.3.2",
+    "@testing-library/user-event": "7.1.2",
+    "@types/chroma-js": "2.1.0",
+    "@types/cytoscape": "3.14.8",
+    "@types/d3-delaunay": "5.3.0",
+    "@types/d3-polygon": "2.0.0",
+    "@types/d3-voronoi": "1.1.9",
+    "@types/jest": "24.0.0",
+    "@types/mathjs": "6.0.5",
+    "@types/node": "14.11.8",
+    "@types/react": "17.0.3",
+    "@types/react-csv": "1.1.1",
+    "@types/react-dom": "16.9.0",
+    "@types/react-router-dom": "5.1.5",
+    "@types/styled-components": "5.1.1",
+    "@types/underscore": "1.10.24",
+    "antd": "4.6.5",
+    "aws-amplify": "3.3.26",
+    "babel-plugin-import": "1.13.0",
+    "bizcharts": "4.0.11",
+    "chroma-js": "2.1.0",
+    "compare-versions": "3.6.0",
+    "craco-less": "1.17.0",
+    "cytoscape": "3.16.2",
+    "d3-delaunay": "5.3.0",
+    "d3-polygon": "2.0.0",
+    "d3-voronoi": "1.1.4",
+    "file-saver": "2.0.2",
+    "jszip": "3.5.0",
+    "less": "3.12.2",
+    "less-loader": "6.2.0",
+    "mathjs": "7.5.1",
+    "memfs": "3.2.0",
+    "mobx": "5.15.4",
+    "mobx-react": "6.3.1",
+    "numbro": "2.3.1",
+    "proj4": "2.6.2",
+    "react": "16.13.1",
+    "react-csv": "2.0.3",
+    "react-dom": "16.13.1",
+    "react-idle-timer": "4.3.6",
+    "react-perfect-scrollbar": "1.5.8",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "3.4.1",
+    "styled-components": "5.1.1",
+    "three": "0.121.1",
+    "typescript": "4.2.4",
+    "underscore": "1.11.0"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.1",
+    "craco-alias": "^2.1.1",
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.1.6"
+  },
+  "fork-ts-checker": {
+    "typescript": {
+      "memoryLimit": 8192
+    }
+  }
+}
