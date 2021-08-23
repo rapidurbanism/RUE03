@@ -28,6 +28,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "exclude": [
+    "build",
     "node_modules",
     "src/mobius/**"
   ],

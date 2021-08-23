@@ -7,11 +7,10 @@ export class MobiusStore {
     this.postMessageData = v;
   }
 
-  // models-stable-ver, models-gamma-ver, models-delta-ver
-  host = "https://iauai-20200725170124-hostingbucket-dev.s3.amazonaws.com/models-gamma-ver/";
-  file = "city.mob";
+  // no need to load any model
+  host = "";
+  file = "";
   @observable initialModel = this.host + this.file;
-
   @observable model = this.host + this.file;
   @action.bound
   setModel(v: string) {
