@@ -4,6 +4,7 @@ import { AuthState, onAuthUIStateChange } from "@aws-amplify/ui-components";
 import { I18n } from "aws-amplify";
 import { HashRouter } from "react-router-dom";
 import Routes from "./Routes";
+import Landing from "@components/Landing";
 
 I18n.putVocabularies({
   en: {
@@ -11,50 +12,24 @@ I18n.putVocabularies({
   },
 });
 
-const App = () => {
-  // const version: string = "private";
-  const version: string = "public";
+const AuthComponent = () => {
+  const version: string = "private";
+  // const version: string = "public";
 
   const [authState, setAuthState] = React.useState<AuthState>();
   const [user, setUser] = React.useState<object | undefined>();
 
-  React.useEffect(() => {
-    return onAuthUIStateChange((nextAuthState, authData) => {
-      setAuthState(nextAuthState);
-      setUser(authData);
-    });
-  }, []);
-
-  return authState === AuthState.SignedIn && user ? (
-    <>
-    {/* <AmplifySignOut /> */}
-    <HashRouter>
-      <Routes />
-    </HashRouter>
-    </>
-  ) : (
-    <>
-      {version === "private" && (
-        <AmplifyAuthenticator>
-          <AmplifySignIn slot="sign-in" usernameAlias="email" style={{ margin: "50px auto", width: "460px", display: "block" }} hideSignUp />
-        </AmplifyAuthenticator>
-      )}
-      {version === "public" && (
-        <HashRouter>
-          <Routes />
-        </HashRouter>
-      )}
-    </>
-  );
-};
-
-export default App;
-
-{
-  /* <AmplifySignUp
+  const AmplifyAuth = () => {
+    return (
+      <AmplifyAuthenticator >
+        <AmplifySignUp
           slot="sign-up"
-          usernameAlias="email"
           formFields={[
+            {
+              type:"username",
+              label: "Username",
+              required: true
+            },
             {
               type: "email",
               label: "Email",
@@ -67,5 +42,45 @@ export default App;
             },
           ]}
           style={{ margin: "50px auto", width: "460px", display: "block" }}
-        /> */
+        />
+        <AmplifySignIn slot="sign-in" style={{ margin: "50px auto", width: "460px", display: "block" }} />
+      </AmplifyAuthenticator>
+    )
+  }
+
+  React.useEffect(() => {
+    return onAuthUIStateChange((nextAuthState, authData) => {
+      setAuthState(nextAuthState);
+      setUser(authData);
+    });
+  }, []);
+
+  return authState === AuthState.SignedIn && user ? (
+    <>
+    <HashRouter>
+      <Routes />
+    </HashRouter>
+    </>
+  ) : (
+    <>
+      {version === "private" && (
+        <AmplifyAuth />
+      )}
+      {version === "public" && (
+        <HashRouter>
+          <Routes />
+        </HashRouter>
+      )}
+    </>
+  );
 }
+
+const App = () => {
+  const [ toAuth, setToAuth ] = React.useState<Boolean>(false);
+
+  return toAuth ? (
+    <AuthComponent />
+  ): <Landing authTrigger={() => setToAuth(true)}/>
+};
+
+export default App;
