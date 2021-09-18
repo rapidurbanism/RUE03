@@ -85,9 +85,34 @@ the drop-down menu under `City > Site Definition`.
 - Dummy Site: Create a simple quadrilateral site for testing and debugging, the same as the method
   used in version RUE 0.2.
 
-## Geojson Input format
+## Geojson Input Files
 
-[To be complete]
+The RUE03 scripts for generating spatial models are applicable to sites that run adjacent to an
+main road. The main road is refer to as an `arterial` road. There may be zero or more `secondary`
+roads, which are expected to run approximately perpendicular to the arterial road. 
+
+The _City_ script require two Geojson files as inputs: the site file and the roads file. 
+- The site file should contain just a single polygon. No attributes are required. One or more of the
+  edges of the site polygon are expected to be adjacent to the arterial road defined in the roads
+  file. 
+- The roads file should contain a set of polylines, representing road centrelines. Two attributes
+  are required: `road_type` and `road_pcent`
+  - `road_type` is a string and can be either `art` indicating the arterial road, or `sec`
+    indicating a secondary road. 
+    - _Arterial road_ (`art`): There should only be one arterial polyline. The polyline will be used
+      as the main axis for sub-dividing the site into blocks and partitions.
+    - _Secondary roads_ (`sec`): There can be multiple secondary polylines. If these polylines cross
+      the site, then they will be used to cut the site polygon into smaller polygons.
+    - _Other roads_: Polylines that are neither `art` nor `sec` are assumed to be other roads, and
+      are ignored.
+  - `road_pcent` is number (a percentage between 0 and 100) that indicates the percentage of the
+    road area to be attributed to the site. 0% indicates that the none of the road area falls within
+    the site, 50% indicates that half the road falls within the site, and 100% indicates that the
+    whole road falls within the site.
+
+The site polygon and road polylines in the Geojson files need to be clean simple geometric objects.
+The number of points used to define these geometric entities should be as few as possible.
+(Geometric entities with many points very close together my cause errors or strange outcomes.)
 
 ## Framework
 
