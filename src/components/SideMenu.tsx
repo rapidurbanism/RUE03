@@ -162,11 +162,23 @@ const SideMenu = observer((props: any) => {
       </Tag>
       <Menu onClick={handleMenuClick} selectable={false}>
         <Menu.Item key="about">About</Menu.Item>
+        <hr/>
         <Menu.Item key="new">New simulation</Menu.Item>
         <Menu.Item key="save">Save simulation</Menu.Item>
         <Menu.Item key="open">
           <Upload {...openPlan}>Open simulation</Upload>
         </Menu.Item>
+        <hr/>
+        <Menu.Item key="terms-conds">
+          <a href={process.env.PUBLIC_URL + "/terms-conds.html"} target="help">Terms + Conditions</a>
+        </Menu.Item>
+        <Menu.Item key="help-user">
+          <a href={process.env.PUBLIC_URL + "/for-end-users.html"} target="help">User Manual</a>
+        </Menu.Item>
+        <Menu.Item key="help-dev">
+          <a href={process.env.PUBLIC_URL + "/for-developers.html"} target="help">Installation</a>
+        </Menu.Item>
+        
         {/* <Menu.Item key="set_script_folder">Set script folder</Menu.Item> */}
         <Menu.Item key="sign_out">Sign Out</Menu.Item>
       </Menu>
