@@ -1,0 +1,9 @@
+// DO NOT EDIT
+
+import React from 'react'
+
+export default () => (
+  <>
+  <%= contents %>
+  </>
+)

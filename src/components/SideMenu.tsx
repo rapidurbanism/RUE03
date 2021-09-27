@@ -170,13 +170,13 @@ const SideMenu = observer((props: any) => {
         </Menu.Item>
         <hr/>
         <Menu.Item key="terms-conds">
-          <a href={process.env.PUBLIC_URL + "/terms-conds.html"} target="help">Terms + Conditions</a>
+          <a href={process.env.PUBLIC_URL + "/docs/termsandconditions"} target="help">Terms + Conditions</a>
         </Menu.Item>
         <Menu.Item key="help-user">
-          <a href={process.env.PUBLIC_URL + "/for-end-users.html"} target="help">User Manual</a>
+          <a href={process.env.PUBLIC_URL + "/docs/usermanual"} target="help">User Manual</a>
         </Menu.Item>
         <Menu.Item key="help-dev">
-          <a href={process.env.PUBLIC_URL + "/for-developers.html"} target="help">Installation</a>
+          <a href={process.env.PUBLIC_URL + "/docs/installation"} target="help">Installation</a>
         </Menu.Item>
         
         {/* <Menu.Item key="set_script_folder">Set script folder</Menu.Item> */}

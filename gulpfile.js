@@ -4,53 +4,15 @@ var markdown = require('gulp-markdown-it');
 var wrap = require("gulp-wrap");
 const rename = require('gulp-rename');
 
-// Tasks that convert markdown files to HTML files.
+// Tasks that convert markdown files to JSX files.
 
-gulp.task('readme', function () {
+gulp.task('md-jsx', function () {
     return gulp
-        .src('./README.md')
-        .pipe(replace(/.md/g, '.html'))
+        .src('./markdown/*.md')
         .pipe(markdown())
-        .pipe(wrap({ src: './src/assets/template-readme.html' }))
-        .pipe(rename({ basename: 'overview' }))
+        .pipe(wrap({ src: './src/assets/TemplateReact.txt' }))
+        .pipe(rename({ extname: '.jsx' }))
         .pipe(
-            gulp.dest("./public/")
+            gulp.dest("./src/components/preprocessed")
         );
 });
-gulp.task('help-dev', function () {
-    const config = {
-        options: {
-            html: true,
-            linkify: true,
-            typographer: true
-        }
-    }
-    return gulp
-        .src('./for-developers.md')
-        .pipe(markdown(config))
-        .pipe(wrap({ src: './src/assets/template-dev.html' }))
-        .pipe(
-            gulp.dest("./public/")
-        );
-});
-gulp.task('help-user', function () {
-    return gulp
-        .src('./for-end-users.md')
-        .pipe(markdown())
-        .pipe(wrap({ src: './src/assets/template-user.html' }))
-        .pipe(
-            gulp.dest("./public/")
-        );
-});
-gulp.task('terms-conds', function () {
-    return gulp
-        .src('./terms-conds.md')
-        .pipe(markdown())
-        .pipe(wrap({ src: './src/assets/template-terms-conds.html' }))
-        .pipe(
-            gulp.dest("./public/")
-        );
-});
-// gulp.task('default', function () {
-//     return gulp.watch('./for-end-users.md', gulp.series(['help-user']));
-// });

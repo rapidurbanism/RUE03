@@ -2,8 +2,8 @@ import React from "react";
 import { AmplifyAuthenticator, AmplifySignUp, AmplifySignIn, AmplifySignOut } from "@aws-amplify/ui-react";
 import { AuthState, onAuthUIStateChange } from "@aws-amplify/ui-components";
 import { I18n } from "aws-amplify";
-import { HashRouter } from "react-router-dom";
-import Routes from "./Routes";
+import { BrowserRouter } from "react-router-dom";
+import Routes, { PublicRoutes } from "./Routes";
 import Landing from "@components/Landing";
 
 I18n.putVocabularies({
@@ -12,9 +12,13 @@ I18n.putVocabularies({
   },
 });
 
+const PublicComponent = () => (
+  <BrowserRouter>
+    <PublicRoutes />
+  </BrowserRouter>
+)
+
 const AuthComponent = () => {
-  const version: string = "private";
-  // const version: string = "public";
 
   const [authState, setAuthState] = React.useState<AuthState>();
   const [user, setUser] = React.useState<object | undefined>();
@@ -57,30 +61,26 @@ const AuthComponent = () => {
 
   return authState === AuthState.SignedIn && user ? (
     <>
-    <HashRouter>
+    <BrowserRouter>
       <Routes />
-    </HashRouter>
+    </BrowserRouter>
     </>
   ) : (
-    <>
-      {version === "private" && (
-        <AmplifyAuth />
-      )}
-      {version === "public" && (
-        <HashRouter>
-          <Routes />
-        </HashRouter>
-      )}
-    </>
+    <AmplifyAuth />
   );
 }
 
 const App = () => {
   const [ toAuth, setToAuth ] = React.useState<Boolean>(false);
+  const isPublic = window.location.pathname.startsWith('/docs')
 
-  return toAuth ? (
-    <AuthComponent />
-  ): <Landing authTrigger={() => setToAuth(true)}/>
+  return (
+  isPublic 
+    ? <PublicComponent />
+    : toAuth
+    ? <AuthComponent />
+    : <Landing authTrigger={() => setToAuth(true)}/>
+  )
 };
 
 export default App;
