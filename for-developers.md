@@ -89,10 +89,28 @@ package manager. The source code for LuckySheet was therefore included, under th
 For more information on Luckysheet:
 * [Luckysheet](https://github.com/mengshukeji/Luckysheet)
 
-## Installation and Build
+## Install and Build
 
-RUE03 is a client side application. There is no server-side code. This makes installation and
-deployment straightforward.
+RUE03 is a client side application. The only server-side process is logging-in. If you decide to
+install RUE03 on your own, then you should create your own login process.
+
+The usual nodejs/npm tools are required. (npm is part of nodejs):
+- [nodejs](https://nodejs.org/en/)
+
+The project is set up to run on Amazon AWS, using the Amplify framework. Amazon Cognito is used for
+logging in, so you need to create a Cognito user pool. For more information:
+- [Amazon Cognito](https://aws.amazon.com/cognito/)
+
+In order to create the `amplify` folder and contents, you need to install the Amplify CLI on your
+local machine. For more information:
+- [Amplify](https://docs.amplify.aws/)
+- [Amplify CLI](https://docs.amplify.aws/cli/)
+- `npm install -g @aws-amplify/cli`
+
+In addition, to generate Html files from Markdown files, `gulp.js` is used. You will therefore need
+to install the Gulp CLI. For more information:
+- [Gulp CLI](https://gulpjs.com/)
+- `npm install -g gulp-cli`
 
 To clone the project:
 - `git clone https://github.com/rapidurbanism/RUE03`
@@ -100,8 +118,14 @@ To clone the project:
 To install, change to root folder, then:
 - `npm install`
 
+To generate the amplify folder, change to root folder and run:
+- `amplify init`
+
 To start dev server:
 - `npm start`
+
+If you get the error message `Module not found: Can't resolve './aws-exports'`, then it probably
+means that you have not run `amplify init`.
 
 ## Direct Dependencies
 
