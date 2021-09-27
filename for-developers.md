@@ -127,6 +127,24 @@ To start dev server:
 If you get the error message `Module not found: Can't resolve './aws-exports'`, then it probably
 means that you have not run `amplify init`.
 
+## Docs
+
+The docs are written as markdown files. To generate Html files from these Markdown files, `gulp.js`
+is used. If you need to edit the docs, then you you should edit the markdown files and then
+regenerate the Html files using `gulp`. You will therefore need to install the Gulp CLI. For more
+information:
+- [Gulp CLI](https://gulpjs.com/)
+- `npm install -g gulp-cli`
+
+There are 4 markdown files in the root:
+- `README`: An overview.
+- `terms-conds`: Terms and conditions.
+- `for-end-users`: User manual for end-users.
+- `for-developers`: Help for developers (this file).
+
+After editing the markup files, you can re-generate the Html doc files like this:
+- `npm run docs`
+
 ## Direct Dependencies
 
 The two main dependencies are:
