@@ -8,16 +8,10 @@ the software on your own server.
 ## Spatial Model
 
 For the spatial models, RUE uses Mobius Modeller, a client-side parametric modelling software in the
-browser.
-
-The spatial model consist of four scripts:
-- _City_: Generates the site polygon.
-- _Neighbourhood_: Subdivides the site into a set of roads and partitions.
-- _Tissue_: Subdivides partitions into lots.
-- _Starter Buildings_: Generates 3D building massings on the lots.
+browser. The spatial model consist of four scripts; see below.
 
 The input parameters for the spatial model are shown on the left hand side. The tabs along the top
-of the 3D viewer allow different model outputs to be shown. 
+of the 3D viewer show different model outputs. 
 
 ## Financial Model
 
@@ -205,5 +199,3 @@ The website links for the dependencies are as follows:
 - https://github.com/mrdoob/three.js
 - https://github.com/Microsoft/TypeScript
 - https://github.com/jashkenas/underscore
-
-
