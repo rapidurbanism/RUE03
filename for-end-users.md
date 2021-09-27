@@ -2,8 +2,6 @@
 
 This is version 0.3 of RUE. This version is an early prototype of the software. 
 
-[**Please read the terms and conditions of this software.**](./terms-conds.html)
-
 This document gives an overview of how to use the software.
 
 ## Overview
