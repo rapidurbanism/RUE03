@@ -18,9 +18,16 @@ gulp.task('readme', function () {
         );
 });
 gulp.task('help-dev', function () {
+    const config = {
+        options: {
+            html: true,
+            linkify: true,
+            typographer: true
+        }
+    }
     return gulp
         .src('./for-developers.md')
-        .pipe(markdown())
+        .pipe(markdown(config))
         .pipe(wrap({ src: './src/assets/template-dev.html' }))
         .pipe(
             gulp.dest("./public/")
