@@ -158,7 +158,7 @@ const SideMenu = observer((props: any) => {
       <img src={Logo} alt="IAUAI" />
       <div className="title">Rapid Urbanism Explorer</div>
       <Tag color="#144465">
-        {version} v{latest_version}
+        RUE version {latest_version}
       </Tag>
       <Menu onClick={handleMenuClick} selectable={false}>
         <Menu.Item key="about">About</Menu.Item>
@@ -170,10 +170,10 @@ const SideMenu = observer((props: any) => {
         </Menu.Item>
         <hr/>
         <Menu.Item key="terms-conds">
-          <a href={process.env.PUBLIC_URL + "/docs/termsandconditions"} target="help">Terms + Conditions</a>
+          <a href={process.env.PUBLIC_URL + "/docs/termsandconditions"} target="help">Terms</a>
         </Menu.Item>
         <Menu.Item key="help-user">
-          <a href={process.env.PUBLIC_URL + "/docs/usermanual"} target="help">User Manual</a>
+          <a href={process.env.PUBLIC_URL + "/docs/usermanual"} target="help">Manual</a>
         </Menu.Item>
         <Menu.Item key="help-dev">
           <a href={process.env.PUBLIC_URL + "/docs/installation"} target="help">Installation</a>
