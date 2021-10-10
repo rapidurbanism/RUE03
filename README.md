@@ -21,7 +21,7 @@ This software is offered under the Open Source
 
 For more information, please follow the links below:
 - [Terms + Conditions](markdown/TermsConds.md)
-- [User Manual](markdown/for-end-users.md) gives an overview of how to use the software. This documentation
+- [User Manual](markdown/UserManual.md) gives an overview of how to use the software. This documentation
   is targeted at end-users.
-- [Installation](markdown/for-developers.md) gives an overview of the software architecture and how to
+- [Installation](markdown/Installation.md) gives an overview of the software architecture and how to
   install the software on your own server. This documentation is targeted at developers.
