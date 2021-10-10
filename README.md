@@ -20,7 +20,7 @@ This software is offered under the Open Source
 ## More Information
 
 For more information, please follow the links below:
-- [Terms + Conditions](terms-conds.md)
+- [Terms + Conditions](markdown/TermsConds.md)
 - [User Manual](for-end-users.md) gives an overview of how to use the software. This documentation
   is targeted at end-users.
 - [Installation](for-developers.md) gives an overview of the software architecture and how to
