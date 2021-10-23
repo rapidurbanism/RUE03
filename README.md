@@ -4,7 +4,7 @@ The Rapid Urbanism Explorer is an Augmented Intelligence (AI) Platform to streng
 amongst decision makers in developing new urban districts in advanced ways. Rapid iterative virtual
 prototyping empowers stakeholders to produce complex urbanization scenarios integrating spatial,
 temporal, socioeconomic and environmental parameters in real time. Further info on
-[www.RapidUrbanism.com/Explorer-AI](www.RapidUrbanism.com/Explorer-AI).
+[www.RapidUrbanism.com/Explorer-AI](http://www.RapidUrbanism.com/Explorer-AI).
 
 ## Rapid Urbanism Explorer Version 0.3
 
